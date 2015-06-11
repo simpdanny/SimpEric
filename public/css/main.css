@@ -1,0 +1,15 @@
+body {
+  padding-top: 70px;
+}
+.logo {
+  width: 30px;
+  height: 30px;
+}
+.char {
+  width:  370px;
+  height: 458px;
+}
+.messages {
+  margin-top: 100px;
+}
+

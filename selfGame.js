@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
 
-var hbs = require('hbs').create({defaultLayout: 'main'});
-app.set('view engine', 'hbs');
+var exphbs = require('express-handlebars');
+app.engine('.hbs', exphbs({extname: '.hbs', defaultLayout: 'main'}));
+app.set('view engine', '.hbs');
 
 app.set('port', 4000);
 app.use(express.static(__dirname + '/public'));
