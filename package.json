@@ -1,12 +1,12 @@
 {
-  "name": "selfGame",
+  "name": "SimpEric",
   "version": "1.0.0",
-  "description": "game for myself :P",
-  "main": "selfGame.js",
+  "description": "Game created by SimpEric :P",
+  "main": "SimpEric.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eirc Liou",
+  "author": "Simpdanny and EircLiou",
   "license": "ISC",
   "dependencies": {
     "express": "^4.12.4",
