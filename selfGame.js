@@ -17,6 +17,9 @@ app.get('/fight', function(req, res) {
 app.get('/chars', function(req, res) {
   res.render('chars');
 });
+app.get('/canvas', function(req, res) {
+  res.render('canvas');
+});
 
 app.use(function(req, res) {
   res.status(404);
