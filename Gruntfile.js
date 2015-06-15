@@ -10,7 +10,7 @@ module.exports = function(grunt){
   // set plungin
   grunt.initConfig({
     jshint: {
-      app: ['selfGame.js', 'public/js/**/*.js', 'lib/**/*.js'],
+      app: ['selfGame.js', 'public/js/**/*.js', 'lib/**/*.js', 'handlers/**/*.js', 'models/**/*.js'],
       qa:  ['Gruntfile.js', 'public/qa/**/*.js'],
     },
     exec: {

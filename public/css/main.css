@@ -13,3 +13,15 @@ body {
   margin-top: 100px;
 }
 
+.btn-del, .btn-del-edit {
+  display: inline;
+  float: right;
+  background: url("/imgs/delete.png") no-repeat bottom left;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+  width: 16px;
+  height: 18px;
+}
+
+

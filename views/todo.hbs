@@ -1,0 +1,20 @@
+<div id='list'>
+  <form class="form-horizontal" action="/todo-create" method="post" accept-charset="utf-8">
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input class="form-control" type="text" name="content" placeholder="ToDo Item"/>
+      </div>
+    </div>
+  </form>
+
+  <form class="form-horizontal">
+    {{#each todos}}
+    <div class="form-group">
+      <div class="col-sm-5">
+        <a class="btn" href="/todo-edit/{{_id}}" title="update this todo item">{{content}}</a>
+        <a class="btn btn-del" href="/todo-destroy/{{_id}}" title="Delete this todo item">Delete</a>
+      </div>
+    </div>
+    {{/each}}
+  </form>
+</div>

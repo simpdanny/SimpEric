@@ -1,0 +1,24 @@
+<div class="col-sm-5">
+  <form class="form-horizontal" action="/todo-create" method="post" accept-charset="utf-8">
+    <div class="form-group">
+      <input class="form-control" type="text" name="content" placeholder="ToDo Item"/>
+    </div>
+  </form>
+  {{#each todos}}
+  {{#ifeq _id ../current}}
+  <form class="form-horizontal" action="/todo-update/{{_id}}" method="post" accept-charset="utf-8">
+    <div class="form-group">
+    <input class="col-sm-11 form-control" type="text" name="content" value="{{content}}"/>
+    <a class="col-sm-1 btn-del-edit" href="/todo-destroy/{{_id}}" title="Delete this todo item">Delete</a>
+  </div>
+  </form>
+  {{else}}
+  <form class="form-horizontal">
+    <div class="form-group">
+      <a class="btn" href="/todo-edit/{{_id}}" title="Edit this todo item">{{content}}</a>
+      <a class="btn-del" href="/todo-destroy/{{_id}}" title="Delete this todo item">Delete</a>
+    </div>
+  </form>
+  {{/ifeq}}
+  {{/each}}
+</div>
