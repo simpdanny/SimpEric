@@ -7,19 +7,7 @@ app.set('view engine', '.hbs');
 
 app.set('port', 4000);
 app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(req, res) {
-  res.render('home');
-});
-app.get('/fight', function(req, res) {
-  res.render('fight');
-});
-app.get('/chars', function(req, res) {
-  res.render('chars');
-});
-app.get('/canvas', function(req, res) {
-  res.render('canvas');
-});
+require('./routes.js')(app);
 
 app.use(function(req, res) {
   res.status(404);
