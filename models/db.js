@@ -10,3 +10,13 @@ var todoSchema = mongoose.Schema ({
 //};
 
 mongoose.model('Todo', todoSchema);
+
+var characterSchema = mongoose.Schema ({
+  name: String,
+    src: String,
+    taunt: String,
+    joke: String,
+    update_at: Date,
+});
+
+mongoose.model('Character', characterSchema);

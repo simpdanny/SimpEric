@@ -1,5 +1,6 @@
 var main = require('./handlers/main.js');
 var todo = require('./handlers/todo.js');
+var character = require('./handlers/character.js');
 
 module.exports = function(app) {
   app.get('/', main.home);
@@ -11,11 +12,14 @@ module.exports = function(app) {
   app.get('/todo-edit/:id', todo.edit);
   app.post('/todo-update/:id', todo.update);
 
+  app.get('/character', character.index);
+  app.post('/character/create', character.create);
+  app.get('/character/destroy/:id', character.destroy);
+  app.get('/character/edit/:id', character.edit);
+  app.get('/character/update/:id', character.update);
+  
   app.get('/fight', function(req, res) {
     res.render('fight');
-  });
-  app.get('/chars', function(req, res) {
-    res.render('chars');
   });
   app.get('/canvas', function(req, res) {
     res.render('canvas');

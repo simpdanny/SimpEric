@@ -13,7 +13,7 @@ var dbopts = {
 };
 //mongoose.connect(credentials.mongo.connectString, dbopts);
 mongoose.connect('140.112.21.27:8888', dbopts);
-require('./models/todo.js');
+require('./models/db.js');
 
 // body-parser
 app.use(bodyParser());

@@ -15,11 +15,13 @@ body {
 .messages {
   margin-top: 100px;
 }
-
+#fortune-panel {
+  width: 730px;
+}
 #fortune {
   width: 730px;
   height: 945px;
-  background: url("/imgs/SamathaZ_large.png") no-repeat top left;
+  background: url("/imgs/Samatha_omega_large.png") no-repeat top left;
   background-size: auto;
 }
 

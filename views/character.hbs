@@ -1,0 +1,56 @@
+<h1> Characters </h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createModal">
+  Create New Character
+</button>
+
+<div class="row">
+  {{#each chars}}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="imgs/{{src}}.png">
+      <div class="caption">
+        <h3>{{{name}}}</h3>
+        <p><b>Taunt:</b>{{taunt}}</p>
+        <p><b>Joke:</b>{{joke}}</p>
+        <p><a href="/character/destroy/{{_id}}" class="btn btn-danger" role="button">Delete</a></p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create New Character</h4>
+      </div>
+      <form action="/character/create" method="post" accept-charset="utf-8">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name" class="control-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="src" class="control-label">Source:</label>
+            <input type="text" class="form-control" id="src" name="src">
+          </div>
+          <div class="form-group">
+            <label for="taunt" class="control-label">Taunt:</label>
+            <input type="text" class="form-control" id="taunt" name="taunt">
+          </div>
+          <div class="form-group">
+            <label for="name" class="control-label">Joke:</label>
+            <input type="text" class="form-control" id="joke" name="joke">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
