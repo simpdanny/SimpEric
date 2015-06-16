@@ -3,7 +3,7 @@ var todo = require('./handlers/todo.js');
 
 module.exports = function(app) {
   app.get('/', main.home);
-  app.get('/about', main.about);
+  app.get('/fortune', main.fortune);
 
   app.get('/todo', todo.index);
   app.post('/todo-create', todo.create);

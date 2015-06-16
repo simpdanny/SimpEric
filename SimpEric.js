@@ -11,7 +11,8 @@ var dbopts = {
     socketOptions: {keepAlive: 1}
   }
 };
-mongoose.connect(credentials.mongo.connectString, dbopts);
+//mongoose.connect(credentials.mongo.connectString, dbopts);
+mongoose.connect('140.112.21.27:8888', dbopts);
 require('./models/todo.js');
 
 // body-parser
