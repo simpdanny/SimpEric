@@ -23,10 +23,10 @@ var Glass = {
 		self.img.onmousemove = null;
 	    };
 	    function draw(ev) {
-		var x = ev.layerX, y = ev.layerY;
+		var x = ev.pageX, y = ev.pageY;
 		console.log(self.img);
-		var x_img = x - self.img.offsetLeft,
-		    y_img = y - self.img.offsetTop;
+		var x_img = x - self.img.x,
+		    y_img = y - self.img.y;
 		var len = 150 / self.ratio;
 	        console.log( " ( pageX , pageY ) = ( " + x + " , " + y + " )");
 	        console.log( " (     X ,     Y ) = ( " + x_img + " , " + y_img + " )");
