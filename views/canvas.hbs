@@ -11,6 +11,7 @@
   <canvas id="can" width="800" height="800" > Hello Canvas!! </canvas>
   <script src="js/canvas.js"> </script> 
   --!>
+  <!-- 
   <div class="col-sm-8">
     <img id="Harold" src="imgs/Harold.png"> </img> 
   </div>
@@ -21,6 +22,90 @@
   <script>
     Glass.bind( document.getElementById("Harold" ));
   </script>
+  --!>
+  
+  <canvas id="map" width="800" height="800" > map </canvas>
+  <img id="sprite_img" src="imgs/walking.png" >
+  <script src="js/sprite.js"> hihi </script>
+  <script> 
+     var map = document.getElementById("map");
+     var sprite_map = document.getElementById("sprite_img");
+     var person = new Sprite( map , 400, 400 , sprite_map);
+     var key_is_down = [ 0 ,0 ,0 ,0];
+     var key = [ "left" , "up" , "right" , "down"];
+     window.addEventListener("keydown" , onKeyDown, false );
+     window.addEventListener("keyup", onKeyUp, false);
+     function onKeyDown(e) {
+	e.preventDefault();
+	var code = e.keyCode;
+	switch ( code ){
+	    case 37:
+		console.log( "Left pressed" );
+		key_is_down[0] = 1;
+		break;
+	    case 38:
+		console.log( "Up pressed" );
+		key_is_down[1] = 1;
+		break;
+	    case 39:
+		console.log( "Right pressed");
+		key_is_down[2] = 1;
+		break;
+	    case 40:
+		console.log( "Down pressed");
+		key_is_down[3] = 1;
+		break;
+	    default:
+		break;
+	}
+     }
+     function onKeyUp(e) {
+	e.preventDefault();
+	var code = e.keyCode;
+	switch ( code ){
+	    case 37:
+		console.log( "Left released" );
+		key_is_down[0] =0 ;
+		break;
+	    case 38:
+		console.log( "Up released" );
+		key_is_down[1] = 0;
+		break;
+	    case 39:
+		console.log( "Right released");
+		key_is_down[2] = 0;
+		break;
+	    case 40:
+		console.log( "Down released");
+		key_is_down[3] = 0;
+		break;
+	    default:
+		break;
+	}
+     }
+      
+     setInterval( function() {
+        var key_count = 0;
+	for ( var i = 0; i < 4 ; i++ ) {
+	    if ( key_is_down[i] == 1) {
+	        key_count += 1;
+		person.changeDirection( key[i] );
+		break;
+	    }
+	}
+	if ( key_count == 0 ) {
+	    person.stop();
+	    console.log("Stop!");
+	}
+	else {
+	    person.start();
+	}
+	map.getContext("2d").clearRect( 0 , 0, map.width, map.height);
+	person.increment(1);
+	person.draw();
+     } , 20); 
+  </script>
+
 </div>
 <div class="row">
   <div class="col-sm-4 messages">
